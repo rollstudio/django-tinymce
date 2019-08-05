@@ -21,7 +21,7 @@ class HTMLField(models.TextField):
 
     def formfield(self, **kwargs):
         defaults = {
-            'widget': tinymce_widgets.TinyMCE()
+            'widget': tinymce_widgets.TinyMCE(profile=self.tinymce_profile)
         }
         defaults.update(kwargs)
 
