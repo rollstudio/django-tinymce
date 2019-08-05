@@ -11,7 +11,7 @@ from django import forms
 from django.conf import settings
 from django.contrib.admin import widgets as admin_widgets
 from django.urls import reverse
-from django.forms.widgets import flatatt
+from django.forms.utils import flatatt
 
 try:
     from collections import OrderedDict as SortedDict
@@ -74,7 +74,7 @@ class TinyMCE(forms.Textarea):
             #mce_config['file_browser_callback'] = "djangoFileBrowser"
         mce_config.update(self.mce_attrs)
         mce_config['selector'] = '#%s' % final_attrs['id']
-        
+
         # Fix for js functions
         #js_functions = {}
         #for k in ('paste_preprocess','paste_postprocess'):
